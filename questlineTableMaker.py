@@ -134,7 +134,7 @@ class Window(QMainWindow):
         data[0]["details"][0]["value"]["table"]["baseRoll"] = f"1d{dice_size}"
 
         # Insert item results into JSON
-        items = open(self.table_path.text(), 'r').readlines()
+        items = open(self.table_path.text(), 'r', encoding='utf-8', errors='replace').readlines()
         for item_num in range(dice_size):
             # Get the item
             if item_num < len(items):
