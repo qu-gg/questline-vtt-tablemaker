@@ -25,16 +25,20 @@ python questlineTableMaker.py
 ## Usage
 To use Questline Table Maker, prepare a text file with your items listed, and then run the application. Follow the GUI prompts to import your text file and generate the table.
 
+The program is pretty simple with just an Open button to select the text file and an Execute button to generate the table in the folder where the program lies:
+
+<center><img src="https://github.com/qu-gg/questline-vtt-tablemaker/assets/32918812/96bac602-d4b2-4803-828b-01e5f377678c"></center>
+
 The text file should be just a bunch of lines where each line is its own item:
 
-<img src="https://github.com/qu-gg/questline-vtt-tablemaker/assets/32918812/99de92da-eff1-44bf-bd71-811a60a4dea6" width="75%">
+<center><img src="https://github.com/qu-gg/questline-vtt-tablemaker/assets/32918812/99de92da-eff1-44bf-bd71-811a60a4dea6" width="75%"></center>
 
 And the imported action should look something like this in Questline:
 
-<img src="https://github.com/qu-gg/questline-vtt-tablemaker/assets/32918812/a115975d-6463-428d-a1f0-40896bd90d54" width="25%">
+<center><img src="https://github.com/qu-gg/questline-vtt-tablemaker/assets/32918812/a115975d-6463-428d-a1f0-40896bd90d54" width="25%"></center>
 
 ## Note on Anti-Virus Catching
-It is a common occurrence that anti-viruses mistakenly flag Python executable programs that were compiled with PyInstaller as malicious software.<br> More information on this can be found <a href="https://github.com/hankhank10/false-positive-malware-reporting">here</a>.
+It is a common occurrence that anti-viruses mistakenly flag Python executable programs that were compiled with PyInstaller as malicious software.<br> More information on this can be found <a href="https://github.com/hankhank10/false-positive-malware-reporting">here</a>, and a recent Windows update seems to be flagging this more than normal. 
 
 ## Issues and Contributions
 Please feel free to put up any issues that are found or enhancements that would improve this work. <br>As well, please feel welcome to put up PRs for any improvements that you can do!
