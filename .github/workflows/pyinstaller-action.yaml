@@ -30,7 +30,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: macos-latest
+          - os: macos-12
             TARGET: macos
             CMD_BUILD: >
                 pyinstaller -F -w -n questlinetablemaker questlineTableMaker.py &&
