@@ -1,2 +1,2 @@
-PyQt5==5.12.2
+PyQt5==5.14.0
 pyinstaller
