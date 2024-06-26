@@ -11,8 +11,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: v1.0
-        release_name: v1.0 - Starter Maker!
+        tag_name: v1.1
+        release_name: v1.1 - Descriptions Added!
         draft: false
         prerelease: false
     - name: Output Release URL File

@@ -98,6 +98,11 @@ class Window(QMainWindow):
             self.die_box.addItem(item)
         base_stats_layout.addWidget(self.die_box, 1, 1)
 
+        # What delimiter to use for descriptions
+        base_stats_layout.addWidget(QLabel("Description Delimiter: "), 2, 0)
+        self.delimiter = QLineEdit(":")
+        base_stats_layout.addWidget(self.delimiter, 2, 1)
+
         # Make the execute button
         self.button = QPushButton("Execute")
         self.button.clicked.connect(lambda: self.create_table())
@@ -105,7 +110,7 @@ class Window(QMainWindow):
 
         # Grid layout
         base_stats_group.setFixedWidth(500)
-        base_stats_group.setFixedHeight(100)
+        base_stats_group.setFixedHeight(150)
         base_stats_group.setLayout(base_stats_layout)
         self.setCentralWidget(base_stats_group)
 
@@ -142,11 +147,28 @@ class Window(QMainWindow):
             else:
                 item_result = "TO-FILL"
 
+            # Split the item into name and description based on delimiter
+            item_name = item_result
+            item_description = ""
+            item_show_description = False
+            item_split = item_result.split(self.delimiter.text())
+            if len(item_split) > 1:
+                item_name = item_split[0]
+                item_description += ':'.join(item_split[1:])
+
+                # If there is a starting whitespace, get rid of it
+                if item_description[0] == ' ':
+                    item_description = item_description[1:]
+
+                # Set to show description
+                item_show_description = True
+
             # Add the item
             data[0]["details"][0]["value"]["table"]["rows"].append(
                 {
-                    'showDescription': False,
-                    'result': item_result,
+                    'showDescription': item_show_description,
+                    'result': item_name,
+                    'description': item_description,
                     'range': {'start': item_num, 'end': item_num}
                 }
             )
